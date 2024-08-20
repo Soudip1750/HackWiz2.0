@@ -1,0 +1,254 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.chat-container {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    width: 400px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.chatbox {
+    padding: 20px;
+    height: 100%;
+    overflow-y: scroll;
+    border-bottom: 1px solid #cccccc;
+}
+
+.chat-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    max-width: 70%;
+}
+
+.user-message {
+    background-color: #007bff;
+    color: white;
+    align-self: flex-end;
+}
+
+.bot-message {
+    background-color: #e9e9eb;
+    align-self: flex-start;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #cccccc;
+    padding: 10px;
+}
+
+#user-input {
+    border: none;
+    padding: 15px 20px;
+    flex-grow: 1;
+    box-sizing: border-box;
+    border-radius: 25px;
+    margin-right: 10px;
+    border: 1px solid #cccccc;
+    outline: none;
+}
+
+button {
+    border: none;
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+/* Add to styles.css */
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 7px;
+    margin-left: 50px; /* Slightly align to the right */
+}
+
+.options-container button {
+    padding: 4px 12px; /* Adjust padding to ensure compact size */
+    border-radius: 10px; /* Smaller border-radius for a more compact look */
+    border: none;
+    background-color: #e9e9eb; /* Match the bot's message color */
+    color: black; /* Dark text for readability */
+    cursor: pointer;
+    text-align: left; /* Align text to the left */
+    margin-bottom: 4px; /* Maintain spacing between options */
+    transition: background-color 0.3s;
+    width: 150px; /* Fixed width for uniformity */
+    font-size: 14px; /* Text size adjusted */
+    display: flex;
+    align-items: center;
+}
+
+.options-container button:hover {
+    background-color: #d4d4d8; /* Slightly darker on hover */
+}
+
+/* Style for the arrow icon */
+.options-container button::after {
+    content: ' →'; /* Unicode arrow character */
+    font-size: 16px; /* Size of the arrow */
+    margin-left: 8px; /* Space between text and arrow */
+}
+/* Add to styles.css */
+
+#calendar-container {
+    margin-top: 10px;
+}
+
+#calendar table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#calendar th, #calendar td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+#calendar td {
+    cursor: pointer;
+}
+
+#calendar td:hover {
+    background-color: #f0f0f0;
+}
+
+/* Add to styles.css */
+
+.time-container {
+    margin-top: 10px;
+}
+
+.time-container button {
+    padding: 6px 12px;
+    border-radius: 10px;
+    border: none;
+    background-color: #e9e9eb; /* Match the bot's message color */
+    color: black; /* Dark text for readability */
+    cursor: pointer;
+    text-align: center;
+    margin-bottom: 4px; /* Maintain spacing between time slots */
+    transition: background-color 0.3s;
+    width: 150px; /* Fixed width for uniformity */
+    font-size: 14px; /* Adjust font size */
+}
+
+.time-container button:hover {
+    background-color: #d4d4d8; /* Slightly darker on hover */
+}
+.dropdown-label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.dropdown {
+    display: block;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.submit-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 10px;
+    display: block;
+    margin-top: 10px;
+}
+/* styles.css */
+
+/* Existing styles */
+
+.payment-container {
+    margin-top: 10px;
+}
+
+.payment-button {
+    display: block;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    font-size: 10px;
+}
+/* Sticky Navbar Styles */
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 90%;
+    background-color: #333;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+}
+
+.navbar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.navbar h1 {
+    color: #fff;
+    font-size: 20px;
+    margin: 0;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.chatbox::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.chatbox {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Adjusted chatbox styles */
+.chatbox {
+    flex: 1;
+    overflow-y: scroll;
+    padding: 20px;
+}
+
