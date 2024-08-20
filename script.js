@@ -265,7 +265,7 @@ function showOptions() {
     chatContent.scrollTop = chatContent.scrollHeight;
 }
 
-// Automatically greet the user when the page loads
+// Automatically greet the user when the page loads.
 window.onload = greetUser;
 
 // Send message when the "Enter" key is pressed
