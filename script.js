@@ -1,6 +1,19 @@
 const chatContent = document.getElementById('chat-content');
 const userInput = document.getElementById('user-input');
 
+let userId = null;
+
+fetch('/create-user', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ username: 'User123' }) // You can dynamically generate or prompt for a username
+})
+.then(response => response.json())
+.then(data => {
+    userId = data.userId;
+});
+
+
 // Function to append messages to the chatbox
 function appendMessage(message, sender) {
     const messageElement = document.createElement('div');
@@ -8,7 +21,17 @@ function appendMessage(message, sender) {
     messageElement.textContent = message;
     chatContent.appendChild(messageElement);
     chatContent.scrollTop = chatContent.scrollHeight;
+
+    // Save the message to the database
+    if (userId) {
+        fetch('/save-message', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ userId, sender, message })
+        });
+    }
 }
+
 
 // Function to send user's message and process bot's response
 function sendMessage(userMessage = '') {
